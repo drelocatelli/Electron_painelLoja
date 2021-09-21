@@ -1,0 +1,81 @@
+*{
+    font-family: 'Tahoma', sans-serif;
+}
+
+body{
+    background: #E8E7E4;
+    /* overflow: hidden; */
+}
+
+.titlepane{
+    background:rgb(29, 29, 29);
+    color:#ffffff;
+    height: 40px;
+    box-sizing: border-box;
+    padding-top:10px;
+}
+
+.titlepane button:nth-child(1){
+    background-color: rgb(63, 63, 63);
+    color:#ffffff;
+    height: 40px;
+    padding:10px 20px;
+}
+
+.titlepane button:nth-child(2){
+    background-color: red;
+    color:#ffffff;
+    height: 40px;
+    padding:10px 20px;
+}
+
+.titlepane button:focus{
+    background: transparent;
+}
+
+.container{
+    padding:0 25px;
+    position:absolute;
+    left:20vw;
+    top:0;
+    margin-top:7vh;
+    width:70%;
+}
+
+.menu{
+    outline:none;
+    user-select: none;
+    position:fixed;
+    top:0;
+    left:0;
+    width: 20%;
+    height: 100%;
+    padding-top:10vh;
+    text-align: center;
+    background: rgb(61, 106, 136);
+    box-sizing: border-box;
+}
+
+.menu li{
+    list-style: none;
+    font-size: 18px;
+}
+
+.menu li.header{
+    font-size: 28px;
+    margin: 20px 0;
+}
+
+.menu a{
+    display: block;
+    padding:15px 5px;
+}
+
+.menu a:hover{
+    background: rgb(50, 89, 114);
+}
+
+.menu, .menu a{
+    text-decoration: none;
+    color:#fff;
+}

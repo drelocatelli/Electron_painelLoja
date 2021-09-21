@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="assets/js/titlePane.js"></script>
+
+    <link rel="stylesheet" href="assets/css/basic.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Sistema Loja</title>
+</head>
+<body>
+
+    <div class="menu">
+        <li><a href="#" onclick="goto('index.html')">Inicio</a></li>
+        <li class="header">Gerenciar</li>
+        <li><a href="#" onclick="goto('clientes.html')">Clientes</a></li>
+        <li><a href="#" onclick="goto('produtos.html')">Produtos</a></li>
+    </div>
+
+    <div class="container">
+               
+        <h3>Cadastrar novo cliente</h3>
+        <hr>
+        <div class="form-group">
+            <form method="post">
+                <table cellspacing="0" cellpadding="5px" width="100%">
+                    <tr>
+                        <td>Nome</td>
+                        <td><input type="text" name="nome"></td>
+                    </tr>
+                    <tr>
+                        <td>Endereço</td>
+                        <td><input type="text" name="endereco"></td>
+                    </tr>
+                    <tr>
+                        <td>Bairro</td>
+                        <td><input type="text" name="bairro"></td>
+                        <td>Cidade</td>
+                        <td><input type="text" name="cidade"></td>
+                        <td>Estado</td>
+                        <td>
+                            <select name="estado">
+                                <option value="">Selecione</option>
+                                <option value="AC">Acre</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="AP">Amapá</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="DF">Distrito Federal</option>
+                                <option value="ES">Espírito Santo</option>
+                                <option value="GO">Goiás</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="PA">Pará</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PR">Paraná</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="RR">Roraima</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="TO">Tocantins</option>
+                                <option value="EX">Estrangeiro</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CEP</td>
+                        <td><input type="number" name="cep"></td>
+                        <td>Telefone</td>
+                        <td><input type="number" name="telefone"></td>
+                    </tr>
+                    <tr>
+                        <td>OBS:</td>
+                        <td colspan="6"><textarea width="100%" cols="30" rows="10" name="observacao"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" align="right">
+                            <button type="submit">Cadastrar novo cliente</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <br><br><br>
+        <h3>Clientes</h3>
+        <hr>
+        <content></content>
+        <br><br>
+    </div>
+
+    
+
+    <script src="assets/js/clientesController.js"></script>
+    
+    <script>
+
+        const fs = require('fs')
+
+        function deleteThis(id){
+            let loca = `${__dirname}\\data\\clientes\\${id}`+'_cliente.json'
+            fs.unlink(loca, function(err){
+                if(err) throw err;
+                alert(`Cliente ${id} será deletado!`)
+                window.location.reload()
+            })
+
+        }
+
+        function goto(url){
+            window.location.href = url
+        }
+        
+        
+    </script>
+    
+</body>
+</html>
+
+<style>
+    .cliente{
+        padding:10px 0;
+        font-size: 12px;
+        border-radius:4px;
+    }
+    .cliente th, .cliente td{
+        border:1px solid rgb(158, 158, 158)!important;
+    }
+    .cliente tbody{
+        background:#fff;
+    }
+</style>
